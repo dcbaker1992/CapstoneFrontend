@@ -5,7 +5,6 @@ import FormHandler from '../FormHandler/formHandler';
 const AddCocktails = (props) => {
     const { values, handleChange, handleSubmit } = FormHandler(addCocktails);
     const [cocktails, setCocktails] = useState(props.cocktails)
-    const [redirect, setRedirect] = useState(false);
 
 
     async function addCocktails() {
@@ -13,7 +12,6 @@ const AddCocktails = (props) => {
         try{
             let response = await axios.post(`http://127.0.0.1:8000/cocktails/`, addCocktails)
             setCocktails(response.data)
-            setRedirect(true);
         }
         catch (err) {
             console.log(err);

@@ -54,6 +54,7 @@ function CocktailDetail(props) {
                     </tbody>
                 </table>
                 <button class="btn btn-secondary" onClick={() => goToNextCocktail()}>Next Cocktail</button>
+                <h2>{cocktailNumber + 1}/{props.cocktails.length}</h2>
             </div>
             
             

@@ -14,18 +14,9 @@ export default function NavBar(){
         <React.Fragment>
             <Navbar className="bg-light" variant="light">
                 <Container>
-                    <Navbar.Brand><u><h1>Cocktail Lounge</h1></u></Navbar.Brand>
+                    <Navbar.Brand><u><h1>The Cocktail Lounge</h1></u></Navbar.Brand>
                     <Nav>
-                        <Nav.Item className="text-lg"> 
-                            <Nav.Link as={Link} to="/"><h5>Home</h5></Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item className="text-lg"> 
-                            <Nav.Link as={Link} to="/addCollection"><h5>Add Collection</h5></Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item> 
-                            <Nav.Link as={Link} to="/addCocktail"><h5>Add Cocktail</h5></Nav.Link>
-                        </Nav.Item>
-                        </Nav>
+                    </Nav>
                 </Container>
             </Navbar>    
         </React.Fragment>

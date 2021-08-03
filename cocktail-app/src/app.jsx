@@ -48,10 +48,11 @@ function App() {
             <br/>
             <br/>
             <br/>
-            <Switch>
-                <Route path="/addCollection" component={AddCollections} />
-                <Route path="/addCocktail" render={props => {return <AddCocktails{...props}/>}}/>
-            </Switch>
+
+            {/* <Switch>
+                <Route path="/addCollection" render={props => {return <AddCollections {...props}/>}}/>
+                <Route path="/addCocktail" render={props => {return <AddCocktails {...props}/>}}/>
+            </Switch> */}
             <br/>
             <CollectionsDisplay collections={collections} cocktails={cocktails} getCocktails={getCocktails} selectedCollection={selectedCollection}/>
             <br/>
@@ -59,10 +60,10 @@ function App() {
             <CocktailsDisplay collections={collections} cocktails={cocktails} getCollections={getCollections} getCocktails={getCocktails} selectedCollection={selectedCollection}/>
             <br/>
             <br/>
-            {/* <AddCollections collections={collections} cocktails={cocktails} selectedCollection={selectedCollection}/> */}
-            {/* <AddCocktails collections={collections} cocktails={cocktails} selectedCollection={selectedCollection}/> */}
             <br/>
             <br/>
+            <AddCollections collections={collections} cocktails={cocktails} selectedCollection={selectedCollection}/>
+            <AddCocktails collections={collections} cocktails={cocktails} selectedCollection={selectedCollection}/>
             <br/>
             <br/>
             <br/>
