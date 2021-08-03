@@ -1,10 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDom from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import App from './app';
 import 'bootstrap/dist/css/bootstrap.css';
 
 
-const jsxElement = <h1>Our React App</h1>;
-console.log(jsxElement);
+ReactDom.render(
+    <Router>
 
-ReactDOM.render(<App />, document.getElementById('root'));
+            <App />
+
+    </Router>, 
+    document.getElementById('root'));

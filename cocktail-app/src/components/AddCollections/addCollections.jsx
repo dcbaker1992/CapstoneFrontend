@@ -5,6 +5,7 @@ import FormHandler from '../FormHandler/formHandler';
 const AddCollections = (props) => {
     const { values, handleChange, handleSubmit } = FormHandler(addCollections);
     const [collections, setCollections] = useState(props.collections)
+    const [redirect, setRedirect] = useState(false);
 
 
 
@@ -13,6 +14,7 @@ const AddCollections = (props) => {
         try{
             let response = await axios.post(`http://127.0.0.1:8000/collection/`, addCollections)
             setCollections(response.data)
+            setRedirect(true);
         }
         catch (err) {
             console.log(err);
@@ -21,15 +23,16 @@ const AddCollections = (props) => {
 
     
     return (
-        <div className="bg-dark text-light">
+        <div class="container">
             <h1>Add A Collection: </h1>
             <form onSubmit={handleSubmit}>
                 <label>
                     Collection Name: 
                     <input type="text" name="name" onChange={handleChange} value={values.name} required={true}/>
-                </label>
+                </label>|
 
-                <button type="submit" class="btn btn-success">Add Collection</button>
+
+                <button type="submit" class="btn btn-secondary">Add Collection</button>
             </form>
             <br/>
         </div>

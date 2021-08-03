@@ -1,0 +1,7 @@
+.bg_image{
+    background-image: url('photo.jpg');
+    color: #f5f5f5;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}

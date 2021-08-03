@@ -5,6 +5,7 @@ import FormHandler from '../FormHandler/formHandler';
 const AddCocktails = (props) => {
     const { values, handleChange, handleSubmit } = FormHandler(addCocktails);
     const [cocktails, setCocktails] = useState(props.cocktails)
+    const [redirect, setRedirect] = useState(false);
 
 
     async function addCocktails() {
@@ -12,6 +13,7 @@ const AddCocktails = (props) => {
         try{
             let response = await axios.post(`http://127.0.0.1:8000/cocktails/`, addCocktails)
             setCocktails(response.data)
+            setRedirect(true);
         }
         catch (err) {
             console.log(err);
@@ -20,7 +22,7 @@ const AddCocktails = (props) => {
 
 
     return (
-        <div className="bg-dark text-light">
+        <div className="container">
             <h1>Add A New Cocktail: </h1>
             <form onSubmit={handleSubmit}>
                 <label>
@@ -43,7 +45,8 @@ const AddCocktails = (props) => {
                     Garnish: 
                     <input type="text" name="garnish" onChange={handleChange} value={values.garnish} required={true}/>
                 </label>
-                <button type="submit" class="btn btn-success">Add Cocktail</button>
+                
+                <button type="submit" class="btn btn-secondary">Add Cocktail</button>
             </form>
             <br/>
         </div>

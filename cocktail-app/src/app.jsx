@@ -4,6 +4,9 @@ import CollectionsDisplay from './components/CollectionsDisplay/collectionsDispl
 import CocktailsDisplay from './components/CocktailsDisplay/cocktailsDisplay';
 import AddCocktails from './components/AddCocktails/addCocktails';
 import AddCollections from './components/AddCollections/addCollections';
+import './app.css'
+import NavBar from './components/NavBar/navBar';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 function App() {
     const [collections, setCollections] = useState([]);
@@ -40,18 +43,41 @@ function App() {
 
 
     return(
-        <div className="bg-dark">
+        <div class="bg_image">
+            <NavBar />
+            <br/>
+            <br/>
+            <br/>
+            <Switch>
+                <Route path="/addCollection" component={AddCollections} />
+                <Route path="/addCocktail" render={props => {return <AddCocktails{...props}/>}}/>
+            </Switch>
+            <br/>
             <CollectionsDisplay collections={collections} cocktails={cocktails} getCocktails={getCocktails} selectedCollection={selectedCollection}/>
             <br/>
             <br/>
             <CocktailsDisplay collections={collections} cocktails={cocktails} getCollections={getCollections} getCocktails={getCocktails} selectedCollection={selectedCollection}/>
             <br/>
             <br/>
-            <AddCollections collections={collections} cocktails={cocktails} selectedCollection={selectedCollection}/>
-            <AddCocktails collections={collections} cocktails={cocktails} selectedCollection={selectedCollection}/>
+            {/* <AddCollections collections={collections} cocktails={cocktails} selectedCollection={selectedCollection}/> */}
+            {/* <AddCocktails collections={collections} cocktails={cocktails} selectedCollection={selectedCollection}/> */}
             <br/>
             <br/>
-            
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+
         </div>
     );
 

@@ -30,24 +30,64 @@ function CocktailDetail(props) {
         }
 
         return(
-            <div className='row row-spacer bg-dark text-light'>
+            <div className="container">
                 <div className ='col-md-4'>
-                    <button class="btn btn-success" onClick={() => goToPreviousCocktail()}>Previous Cocktail</button>
+                    <button class="btn btn-secondary" onClick={() => goToPreviousCocktail()}>Previous Cocktail</button>
                 </div>
-                <div className='col-md-4'>
-                    <h1>{props.cocktails[cocktailNumber].name}</h1>
-                    <h4>{props.cocktails[cocktailNumber].ingredients}</h4>
-                    <h4>{props.cocktails[cocktailNumber].preparation}</h4>
-                    <h4>{props.cocktails[cocktailNumber].garnish}</h4>
-                    <h2>{cocktailNumber + 1}/{props.cocktails.length}</h2>
-                </div>
-                <div className='col-md-4'>
-                    <button class="btn btn-success" onClick={() => goToNextCocktail()}>Next Cocktail</button>
-                </div>
-                {/* <EditCocktail cards={props.flashcards[flashcardNumber]} collections={props.collections}
-                            selectedCollection={props.selectedCollection}/> */}
+                <br/>
+                <table class="table table-light">
+                    <thead>
+                        <tr>
+                            <th>Name:</th>
+                            <th>Ingredients:</th>
+                            <th>Preparation:</th>
+                            <th>Garnish:</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{props.cocktails[cocktailNumber].name}</td>
+                            <td>{props.cocktails[cocktailNumber].ingredients}</td>
+                            <td>{props.cocktails[cocktailNumber].preparation}</td>
+                            <td>{props.cocktails[cocktailNumber].garnish}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="btn btn-secondary" onClick={() => goToNextCocktail()}>Next Cocktail</button>
             </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            // <div className='row row-spacer container'>
+            //     <div className ='col-md-4'>
+            //         <button class="btn btn-success" onClick={() => goToPreviousCocktail()}>Previous Cocktail</button>
+            //     </div>
+            //     <div className='col-md-4'>
+            //         <h1>{props.cocktails[cocktailNumber].name}</h1>
+            //         <h4>{props.cocktails[cocktailNumber].ingredients}</h4>
+            //         <h4>{props.cocktails[cocktailNumber].preparation}</h4>
+            //         <h4>{props.cocktails[cocktailNumber].garnish}</h4>
+            //         <h2>{cocktailNumber + 1}/{props.cocktails.length}</h2>
+            //     </div>
+            //     <div className='col-md-4'>
+            //         <button class="btn btn-success" onClick={() => goToNextCocktail()}>Next Cocktail</button>
+            //     </div>
+            //     {/* <EditCocktail cards={props.flashcards[flashcardNumber]} collections={props.collections}
+            //                 selectedCollection={props.selectedCollection}/> */}
+            // </div>
     )}
 }
+
 
 export default CocktailDetail;

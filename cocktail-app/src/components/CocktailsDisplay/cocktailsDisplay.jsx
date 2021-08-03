@@ -10,7 +10,7 @@ function CocktailsDisplay(props){
     });
 
     return(
-        <div className="container">
+        <div>
                 <ul>
                     <CocktailDetail cocktails={props.cocktails} collections={props.collections}
                                 selectedCollection={props.selectedCollection}/>
