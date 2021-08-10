@@ -33,7 +33,7 @@ const Login = (props) => {
 
     return (
         <div>
-        <div className="container">
+        <div className="container text-light">
             <h1>LOG IN</h1>
             <Form>
             <FormGroup>
@@ -60,7 +60,7 @@ const Login = (props) => {
                 value={values.password}
                 />
             </FormGroup>
-            <button onClick={handleSubmit} className="reg-submit">
+            <button onClick={handleSubmit} className="btn btn-secondary">
                 Login
             </button>
             </Form>

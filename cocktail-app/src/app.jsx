@@ -20,6 +20,7 @@ function App() {
     const [collections, setCollections] = useState([]);
     const [cocktails, setCocktails] = useState([]);
     const [selectedCollection, setSelectedCollection] = useState(null);
+    const [searchCoctails, setSearch] = useState([])
 
     useEffect(() => {
         getCollections();
@@ -46,6 +47,20 @@ function App() {
             console.log(err);
         }
     }
+    let result=()=>{
+       
+        if(searchCoctails){
+            return searchCoctails.map((cocktail)=>(
+                <div key={cocktail.idDrink}>
+                <img src={cocktail.strDrinkThumb} alt='cocktails' height='200' width='200'/>
+                <h2>{cocktail.strDrink}</h2>
+                </div>
+            ));
+        }
+        else{
+            return<div></div>
+        }
+    }
     
 
     return(
@@ -64,7 +79,8 @@ function App() {
             <br/>
             <br/>
             <br/>
-            <SearchBar />
+            <SearchBar setSearch1 = {setSearch} />
+            {result()}
             <br/>
             <br/>
             <br/>
@@ -90,7 +106,7 @@ function App() {
             <br/>
             <br/>
             <br/>
-
+            
 
         </div>
     );

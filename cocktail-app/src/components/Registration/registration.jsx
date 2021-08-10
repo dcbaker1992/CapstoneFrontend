@@ -28,7 +28,7 @@ const Registration = () => {
 
   return (
     <div>
-      <div className="container">
+      <div className="container text-light">
         <h1>Registration</h1>
         <Form>
           <FormGroup>
@@ -90,7 +90,7 @@ const Registration = () => {
               onChange={handleChange}
               value={values.phone_number}
             />
-            <button onClick={handleSubmit} className="reg-submit">
+            <button onClick={handleSubmit} className="btn btn-secondary">
               Submit
             </button>
           </FormGroup>

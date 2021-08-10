@@ -10,34 +10,28 @@ class SearchBar extends Component {
             cocktails:[],
         }
     }
+    handleThing = (thing) =>{
+        this.props.setSearch1(thing)
+    }
     changeHandler = (e) =>{
         let options = {
             method: 'GET',
-            url: `https://the-cocktail-db.p.rapidapi.com/filter.php?i=orange`,
+            url: `https://the-cocktail-db.p.rapidapi.com/filter.php?i=vodka`,
             headers: {
                 'x-rapidapi-key': '492e2cab5dmshbb7bcc8e4124726p1b2b17jsn2a3be5521a8e',
                 'x-rapidapi-host': 'the-cocktail-db.p.rapidapi.com'
             }
         };
-        axios.request(options).then(function (response) {
+        axios.request(options).then( (response) => {
             console.log(response.data);
+            this.handleThing(response.data.drinks)
 
         }).catch(function (error) {
             console.error(error);
     });
 
     }
-    result=()=>{
-        const data=this.state.cocktails.drinks;
-        if(data){
-            return data.map((cocktail)=>(
-                <div key={cocktail.idDrink}>
-                <img src={cocktail.strDrinkThumb} alt='cocktails' height='200' width='200'/>
-                <h2>{cocktail.strDrink}</h2>
-                </div>
-            ));
-        }
-    }
+    
     submitHandler = (e) =>{
         e.preventDefault();
     }
@@ -52,11 +46,10 @@ class SearchBar extends Component {
                     <div>
                         <input type="search" />
                         <br />
-                        <button className="submit-btn" onClick={this.changeHandler}>SEARCH</button>
+                        <button className="btn btn-secondary" onClick={this.changeHandler}>SEARCH</button>
                     </div>
                 </form>
             </div>
-            {this.result()}
         </div>
         )
     }
