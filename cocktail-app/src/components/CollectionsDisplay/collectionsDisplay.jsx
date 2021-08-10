@@ -15,7 +15,7 @@ function CollectionsDisplay(props){
 
     return(
         <div class="container">
-            <h1><u>Collections:</u></h1>
+            <h1><u>My Collections:</u></h1>
             <p>(Please click on a collection below to display Cocktails)</p>
             <h3>{collections}</h3>
             <br/>

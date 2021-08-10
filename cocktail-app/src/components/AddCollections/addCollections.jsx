@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios'
-import FormHandler from '../FormHandler/formHandler';
+import useForm from '../UseForm/UseForm';
 
 const AddCollections = (props) => {
-    const { values, handleChange, handleSubmit } = FormHandler(addCollections);
+    const { values, handleChange, handleSubmit } = useForm(addCollections);
     const [collections, setCollections] = useState(props.collections)
     const [redirect, setRedirect] = useState(false);
 
@@ -24,7 +24,7 @@ const AddCollections = (props) => {
     
     return (
         <div class="container">
-            <h1>Add A Collection: </h1>
+            <h1>Add A Favorite Collection: </h1>
             <form onSubmit={handleSubmit}>
                 <label>
                     Collection Name: 

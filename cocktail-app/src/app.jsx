@@ -1,12 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'; 
+import './app.css'
 import CollectionsDisplay from './components/CollectionsDisplay/collectionsDisplay';
 import CocktailsDisplay from './components/CocktailsDisplay/cocktailsDisplay';
 import AddCocktails from './components/AddCocktails/addCocktails';
 import AddCollections from './components/AddCollections/addCollections';
-import './app.css'
 import NavBar from './components/NavBar/navBar';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import Registration from './components/Registration/registration';
+import Login from './components/Login/Login';
+import RandomCocktail from './components/RandomCocktail/RandomCocktail';
+import SearchBar from './SearchBar/SearchBar';
+
+
+
+
+
 
 function App() {
     const [collections, setCollections] = useState([]);
@@ -17,7 +25,6 @@ function App() {
         getCollections();
         getCocktails();    
     }, []);
-
 
     let getCollections = async () => {
         try{
@@ -39,16 +46,18 @@ function App() {
             console.log(err);
         }
     }
-
-
+    
 
     return(
         <div class="bg_image">
             <NavBar />
             <br/>
+            <Registration />
+            <Login />
             <br/>
             <br/>
-
+            
+            <SearchBar />
             {/* <Switch>
                 <Route path="/addCollection" render={props => {return <AddCollections {...props}/>}}/>
                 <Route path="/addCocktail" render={props => {return <AddCocktails {...props}/>}}/>
@@ -60,6 +69,7 @@ function App() {
             <CocktailsDisplay collections={collections} cocktails={cocktails} getCollections={getCollections} getCocktails={getCocktails} selectedCollection={selectedCollection}/>
             <br/>
             <br/>
+            <RandomCocktail />
             <br/>
             <br/>
             <AddCollections collections={collections} cocktails={cocktails} selectedCollection={selectedCollection}/>
@@ -67,27 +77,14 @@ function App() {
             <br/>
             <br/>
             <br/>
+            
             <br/>
             <br/>
             <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
+
 
         </div>
     );
-
-
-
-
-
-
-
 
 }    
 

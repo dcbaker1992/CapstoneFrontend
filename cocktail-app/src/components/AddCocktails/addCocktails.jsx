@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios'
-import FormHandler from '../FormHandler/formHandler';
+import useForm from '../UseForm/UseForm';
 
 const AddCocktails = (props) => {
-    const { values, handleChange, handleSubmit } = FormHandler(addCocktails);
+    const { values, handleChange, handleSubmit } = useForm(addCocktails);
     const [cocktails, setCocktails] = useState(props.cocktails)
 
 
@@ -21,7 +21,7 @@ const AddCocktails = (props) => {
 
     return (
         <div className="container">
-            <h1>Add A New Cocktail: </h1>
+            <h1>Add A Favorite Cocktail: </h1>
             <form onSubmit={handleSubmit}>
                 <label>
                     Collection Id: 
