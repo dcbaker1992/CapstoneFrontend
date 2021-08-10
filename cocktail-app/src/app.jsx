@@ -53,31 +53,40 @@ function App() {
             <NavBar />
             <br/>
             <Registration />
+            <br/>
+            <br/>
             <Login />
             <br/>
             <br/>
-            
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             <SearchBar />
-            {/* <Switch>
-                <Route path="/addCollection" render={props => {return <AddCollections {...props}/>}}/>
-                <Route path="/addCocktail" render={props => {return <AddCocktails {...props}/>}}/>
-            </Switch> */}
             <br/>
-            <CollectionsDisplay collections={collections} cocktails={cocktails} getCocktails={getCocktails} selectedCollection={selectedCollection}/>
-            <br/>
-            <br/>
-            <CocktailsDisplay collections={collections} cocktails={cocktails} getCollections={getCollections} getCocktails={getCocktails} selectedCollection={selectedCollection}/>
             <br/>
             <br/>
             <RandomCocktail />
             <br/>
             <br/>
+            <br/>
+            <br/>
+            <br/>          
+            <br/>
+            <br/>
+            <CollectionsDisplay collections={collections} cocktails={cocktails} getCocktails={getCocktails} selectedCollection={selectedCollection}/>
+            <br/>
+            <br/>
+            <CocktailsDisplay collections={collections} cocktails={cocktails} getCollections={getCollections} getCocktails={getCocktails} selectedCollection={selectedCollection}/>
+
             <AddCollections collections={collections} cocktails={cocktails} selectedCollection={selectedCollection}/>
             <AddCocktails collections={collections} cocktails={cocktails} selectedCollection={selectedCollection}/>
             <br/>
             <br/>
             <br/>
-            
+            <br/>
             <br/>
             <br/>
             <br/>

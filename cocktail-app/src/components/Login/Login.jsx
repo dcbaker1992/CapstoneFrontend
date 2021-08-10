@@ -34,6 +34,7 @@ const Login = (props) => {
     return (
         <div>
         <div className="container">
+            <h1>LOG IN</h1>
             <Form>
             <FormGroup>
                 <Label for="userName">Username</Label>

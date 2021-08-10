@@ -29,6 +29,7 @@ const Registration = () => {
   return (
     <div>
       <div className="container">
+        <h1>Registration</h1>
         <Form>
           <FormGroup>
             <Label for="fullName">Full Name</Label>

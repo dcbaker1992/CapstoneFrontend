@@ -57,10 +57,10 @@ class RandomCocktail extends React.Component {
     }
     
     render() {
-        return <div className="container bg-secondary">
+        return <div className="container">
+            <h1>Click for a Random Cocktail!</h1>
             <button class="btn btn-danger" onClick={this.DisplayRandomCocktail.bind(this)}>Random Cocktail</button>
-            <img src={this.state.image} alt="img" width="200" height="200"/>
-            <h1>{this.state.name}</h1>
+            <h3>{this.state.name}</h3>
             <h6>{this.state.category}</h6>
             <h6>{this.state.instructions}</h6>
             <h6>{this.state.measure1}       {this.state.ingredient1}</h6>
@@ -69,6 +69,7 @@ class RandomCocktail extends React.Component {
             <h6>{this.state.measure4} {this.state.ingredient4}</h6>
             <h6>{this.state.measure5} {this.state.ingredient5}</h6>
             <h6>{this.state.measure6} {this.state.ingredient6}</h6>
+            <img src={this.state.image} alt="img" width="200" height="200"/>
 
             </div>
         
