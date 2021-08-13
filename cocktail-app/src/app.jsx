@@ -48,12 +48,12 @@ function App() {
         }
     }
     let result=()=>{
-       
         if(searchCoctails){
             return searchCoctails.map((cocktail)=>(
                 <div key={cocktail.idDrink}>
                 <img src={cocktail.strDrinkThumb} alt='cocktails' height='200' width='200'/>
                 <h2>{cocktail.strDrink}</h2>
+                <h2>{cocktail.strCategory}</h2>
                 </div>
             ));
         }
